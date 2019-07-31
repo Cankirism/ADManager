@@ -35,9 +35,9 @@ uygulama  test ve gerçek ortamında ;
 - Windows 7 ,
 - Windows 8 ,
 - Windows 10 istemci işletim sistemi ailesinde sorunsuz çalışmıştır.
- Sunucu tarafından ise ; 
+   Sunucu tarafında ise ; 
  - Windows Server 2012 R2 Standart
- - Windows Server 2016 R2 standart AD sunucuları ile sorunsuz çalışmıştır
+ - Windows Server 2016 R2 Standart AD sunucuları ile sorunsuz çalışmıştır
  
 
 
