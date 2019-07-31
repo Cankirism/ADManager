@@ -32,19 +32,22 @@ namespace ADManager
         /// </summary>
         private void GetAdmins()
         {
-            int _selectedIndex = comboBox1.SelectedIndex;
-
-            if (_selectedIndex != -1)
+            ExceptionCatcher(() =>
             {
-                bluser = new BusinessUser();
-                _adminGrupName = comboBox1.SelectedItem.ToString();
-                List<string> adminListesi = bluser.ListAdmins(_adminGrupName);
+                int _selectedIndex = comboBox1.SelectedIndex;
 
-                for (int i = 0; i < adminListesi.Count; i++)
+                if (_selectedIndex != -1)
                 {
-                  dataGridView1.Rows.Add(i + 1, adminListesi[i], _adminGrupName);
+                    bluser = new BusinessUser();
+                    _adminGrupName = comboBox1.SelectedItem.ToString();
+                    List<string> adminListesi = bluser.ListAdmins(_adminGrupName);
+
+                    for (int i = 0; i < adminListesi.Count; i++)
+                    {
+                        dataGridView1.Rows.Add(i + 1, adminListesi[i], _adminGrupName);
+                    }
                 }
-            }
+            }); 
         }
 
         private void ExceptionCatcher(Action action)
