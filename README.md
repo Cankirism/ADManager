@@ -21,7 +21,7 @@ Bu uygulama ile :
 - AD veri tabanında cihaz sorgulama,
 - AD veri tabanına cihaz ekleme,
 - Cihazlara uzaktan direktif uygulama,
-- Cihaz bazlı yada toplu sorgu sonucu raporlama işlemleri yapılabilinmektedir.
+- Cihaz bazlı yada toplu sorgu sonucu raporlama işlemleri yapılmaktadır.
 
 Bir sonraki versiyon güncelllemesi ile ;
 - AD Sunucusunda GPO düzenlemesi yapılması,
