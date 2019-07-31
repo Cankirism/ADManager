@@ -7,7 +7,20 @@ Bu uygulama ile :
 - Aktif Dizin veritabanından tüm kullanıcıları listeleme,
 - AD veritabanına kullanıcı ekleme,
 - AD veritabanında kullanıcı sorgulama,
-- AD veritabanında  kullanıcının üye gruplarını listeleme 
-- 
+- AD veritabanından kullanıcı silme,
+- AD veritabanında kullanıcıyı pasif yapma,
+- AD veritabanında pasif kullanıcıyı aktifleştirme,
+- AD veritabanında  kullanıcının üye gruplarını listeleme,
+- Kullanıcıya admin yetkisi atama,
+- Kullanıcıdan admin yetkisi alma,
+- Kullanıcı parolasını değiştirme,
+- Kullanıcı hareketlerini görme,
+- Kullanıcı bazlı ya da toplu sorgu sonucu raporlama,
+- AD veritabanından kayıtlı cihazları listeleme,
+- AD veritabanında cihaz sorgulama,
+- AD veritabanıa cihaz ekleme,
+- Cihazlara uzaktan direktif uygulama,
+- Cihazbazlı yada toplu sorgu sonucu raporlama
+
 
 
