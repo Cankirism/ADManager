@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace ADManager
     {
         // Kullanıcıya Admin Yetkisi Verdiğimiz UI
         private readonly string samAccountName;
-        public  AdminUye(string samAccountName)
+        public AdminUye(string samAccountName)
         {
             this.samAccountName = samAccountName;
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace ADManager
 
         public void HepsiniAktar()
         {
-            foreach(var group in listBox2.Items)
+            foreach (var group in listBox2.Items)
 
                 listBox3.Items.Add(group);
         }
@@ -52,15 +53,39 @@ namespace ADManager
         // Kullanıcıyı seçilen Admin Grubuna atar.
         public void AddUserToAdminGroup()
         {
+
             if (listBox3.Items.Count != 0)
             {
-                string groupName = listBox3.Items[0].ToString();
-                BusinessUser blUser = new BusinessUser();
-                MessageBox.Show(blUser.AddUserToAdminGroup(samAccountName, groupName));
+                AdminExceptionCatcher(() =>
+                {
+                    string groupName = listBox3.Items[0].ToString();
+                    BusinessUser blUser = new BusinessUser();
+                    MessageBox.Show(blUser.AddUserToAdminGroup(samAccountName, groupName));
+                });
+
             }
 
             else
                 MessageBox.Show("Grup Seçilmedi", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }   
+        }
+
+
+        private void AdminExceptionCatcher(Action action)
+        {
+            try
+            {
+                action.Invoke();
+            }
+
+            catch (DirectoryServicesCOMException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
     }
 }

@@ -28,10 +28,17 @@ namespace ADManager
 
         private void DegistirBtn_Click(object sender, EventArgs e)
         {
-            var changePasswordDialog = MessageBox.Show(samAccountName + "Kullanıcısının parolasını değiştirmek istiyor musunuz ? ","Dikkat !", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            if (changePasswordDialog == DialogResult.Yes)
+            try
             {
-                MessageBox.Show(blUser.ResetUserPassword(samAccountName, newPassTxt.Text));
+                var changePasswordDialog = MessageBox.Show(samAccountName + "Kullanıcısının parolasını değiştirmek istiyor musunuz ? ", "Dikkat !", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (changePasswordDialog == DialogResult.Yes)
+                {
+                    MessageBox.Show(blUser.ResetUserPassword(samAccountName, newPassTxt.Text));
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
             }   
         }
     }

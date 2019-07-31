@@ -210,27 +210,13 @@ namespace ADManager
 
         public string AddUserToAdminGroup(string samAccountName, string adminGroupName)
         {
-            try
+            using (PrincipalContext principialCon = user.BaglantiKur())
+            using (GroupPrincipal adminGroup = user.FindAdminGroup(principialCon, IdentityType.Name, adminGroupName))
             {
-                using (PrincipalContext principialCon = user.BaglantiKur())
-                using (GroupPrincipal adminGroup = user.FindAdminGroup(principialCon, IdentityType.Name, adminGroupName))
-                {
-                    adminGroup.Members.Add(principialCon, IdentityType.SamAccountName, samAccountName);
-                    adminGroup.Save();
-                    ResponseMessage = "İşlem Başarılı";     
-                }
-
+                adminGroup.Members.Add(principialCon, IdentityType.SamAccountName, samAccountName);
+                adminGroup.Save();
+                ResponseMessage = "İşlem Başarılı";
             }
-            catch (DirectoryServicesCOMException ex)
-            {
-                ResponseMessage = ex.Message;
-            }
-
-            catch (Exception exc)
-            {
-                ResponseMessage = exc.Message;
-            }
-
             return ResponseMessage;
         }
 
@@ -240,28 +226,14 @@ namespace ADManager
         public List<string> ListAdmins(string adminGroupName)
         {
             List<string> adminUserNameList = new List<string>();
-
-            try
+            using (PrincipalContext principialCon = user.BaglantiKur())
+            using (GroupPrincipal adminGroup = user.FindAdminGroup(principialCon, IdentityType.Name, adminGroupName))
             {
-                using (PrincipalContext principialCon = user.BaglantiKur())
-                using (GroupPrincipal adminGroup = user.FindAdminGroup(principialCon, IdentityType.Name, adminGroupName))
+                PrincipalSearchResult<Principal> adminList = adminGroup.GetMembers();
+                foreach (var pr in adminList)
                 {
-                    PrincipalSearchResult<Principal> adminList = adminGroup.GetMembers();
-                    foreach (var pr in adminList)
-                    {
-                        adminUserNameList.Add(pr.SamAccountName);
-                    }
+                    adminUserNameList.Add(pr.SamAccountName);
                 }
-
-            }
-            catch (DirectoryServicesCOMException ex)
-            {
-                ResponseMessage = ex.Message;
-            }
-
-            catch (Exception exc)
-            {
-                ResponseMessage = exc.Message;
             }
             return adminUserNameList;
         }
@@ -277,24 +249,15 @@ namespace ADManager
         public IEnumerable<string> GetUserGroups(string samAccountName)
         {
             List<string> groupList = new List<string>();
-            try
+            using (PrincipalContext principialCon = user.BaglantiKur())
+            using (UserPrincipal userPrincipial = user.SetPrincipialToFind(principialCon, IdentityType.SamAccountName, samAccountName))
             {
-                using (PrincipalContext principialCon = user.BaglantiKur())
-                using (UserPrincipal userPrincipial = user.SetPrincipialToFind(principialCon, IdentityType.SamAccountName, samAccountName))
+                var groups = userPrincipial.GetAuthorizationGroups();
+
+                foreach (Principal gp in groups)
                 {
-                    var groups = userPrincipial.GetAuthorizationGroups();
-
-                    foreach (Principal gp in groups)
-                    {
-                        groupList.Add(gp.ToString());
-                    }
+                    groupList.Add(gp.ToString());
                 }
-
-            }
-            catch (Exception ex)
-            {
-
-                ResponseMessage = ex.Message;
             }
             return groupList;
         }
@@ -307,23 +270,15 @@ namespace ADManager
         /// <returns>Durum Bilgisini Döner (Başarılı ya da Hatalı)</returns>
         public string ResetUserPassword(string samAccountName, string password)
         {
-            try
+            using (PrincipalContext principialCon = user.BaglantiKur())
+            using (UserPrincipal userPrincipial = user.SetPrincipialToFind(principialCon, samAccountName))
             {
-                using (PrincipalContext principialCon = user.BaglantiKur())
-                using (UserPrincipal userPrincipial = user.SetPrincipialToFind(principialCon, samAccountName))
+                if (samAccountName != null)
                 {
-                    if (samAccountName != null)
-                    {
-                        userPrincipial.SetPassword(password);
-                        ResponseMessage = "Kullanıcı Parolası Değiştirildi";
-                    }
+                    userPrincipial.SetPassword(password);
+                    ResponseMessage = "Kullanıcı Parolası Değiştirildi";
                 }
             }
-            catch (Exception ex)
-            {
-                ResponseMessage = ex.Message;
-            }
-
             return ResponseMessage;
         }
 

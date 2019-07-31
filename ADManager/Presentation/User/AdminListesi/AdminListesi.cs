@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,23 @@ namespace ADManager
                 {
                   dataGridView1.Rows.Add(i + 1, adminListesi[i], _adminGrupName);
                 }
+            }
+        }
+
+        private void ExceptionCatcher(Action action)
+        {
+            try
+            {
+                action.Invoke();
+            }
+            catch (DirectoryServicesCOMException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
             }
         }
 
