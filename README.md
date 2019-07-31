@@ -27,7 +27,21 @@ Bir sonraki versiyon güncelllemesi ile ;
 - AD Sunucusunda GPO düzenlemesi yapılması,
 - AD sunucusunudan  GPO dökümü alınması,
 - AD sunucusunda OU tanımlaması ve kullanıcı - OU ataması yapılması,
+- Kullanıcı - OU taşıma işlemleri,
 - AD sunucu sağlık analizi yapılması planlanmaktadır.
+
+## Çalışma Ortamı  ##
+uygulama  test ve gerçek ortamında ;
+- Windows 7 ,
+- Windows 8 ,
+- Windows 10 istemci işletim sistemi ailesinde sorunsuz çalışmıştır.
+ Sunucu tarafından ise ; 
+ - Windows Server 2012 R2 Standart
+ - Windows Server 2016 R2 standart AD sunucuları ile sorunsuz çalışmıştır
+ 
+
+
+
 
 
 
