@@ -66,7 +66,7 @@ Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 
 ## Uygulama Arayüzü Kullanım ##
 
-Uygulama kimlik doğrulama başarılı olduğunda Ana Ekrana yönlendirir. 
+Uygulama kimlik doğrulama başarılı olduğunda Ana Ekrana yönlendirir.  
 ![Ana Ekran](../master/ScreenShots/Home.png)
 
 
