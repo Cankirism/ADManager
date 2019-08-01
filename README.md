@@ -37,6 +37,12 @@ uygulama  test ve gerçek ortamında ;
  - Windows Server 2012 R2 Standart
  - Windows Server 2016 R2 Standart AD sunucuları ile sorunsuz çalışmıştır
  
+## Gereksinimler ##
+- Windows istemci cihaz  (Sunucu - client işletim sistemi ailesi)
+- .Net Framework 4.5 + 
+
+## Kurulum ## 
+Kurulum dosyasını buradan[ADmanager](Kurulum) indirerek kurulum yapılabilinmektedir.
 
 
 
