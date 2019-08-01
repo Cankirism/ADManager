@@ -49,12 +49,18 @@ Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız ge
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
   
 Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasındabelirtmemiz gerekir.~~
-  ```<appSettings>
+  ```
+  <appSettings>
     <add key="path" value=""/>
     <add key="domainServer" value=""/>
     <add key="computerDomain" value=""/>
-  </appSettings>*
+  </appSettings>
 ```
+**path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local
+**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local
+**computerDomain** : Domainizin adı. Örn : mydomain.local
+
+
 
 
 
