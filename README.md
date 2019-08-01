@@ -144,7 +144,7 @@ Bunlardan bazıları şu şekildedir:
             
             
 Daha fazla bilgi ![buradan](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) alınabilir.  
- ## 3. Bilgisayar İşlemleri ##
+ ### 3. Bilgisayar İşlemleri ###
  AD viertabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur]((../master/ScreenShots/KullaniciArayuz.png)  
  Form üzerinde;
  - Bilgisayar kaydı,
@@ -153,9 +153,15 @@ Daha fazla bilgi ![buradan](https://support.microsoft.com/en-us/help/305144/how-
  - Cihazlara uzaktan direktif gönderme,
  - RPC aktif olan cihazların sistem kaynak durumlarını görebilmei yapılabilmektedir 
  
- ## Raporlama ##
+ ### 4. Raporlama ###
  Her form üzerinde yer alan Excel ve PDF simgeleri raporla sınıfını tetikleyen bileşenlerdir.  
  Formlar üzerinde yer alan datagrid üzerinki verilerin dökümünü hazırlar.  
+ 
+ ## Kod Analizi ##
+ Uygulama kaynak kod analizinde Sonarqube aracından faydalanılmıştır. Kod analiz ![sonuçları](https://sonarcloud.io/dashboard?id=ADManager) bulut ortamına yüklenmiştir.
+ 
+ 
+
  
  
      
