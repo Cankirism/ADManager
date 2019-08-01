@@ -66,11 +66,12 @@ Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 
 ## Uygulama Arayüzü Kullanım ##
 
-### 1- Uygulama Ana Form ###
+### 1. Uygulama Ana Form ###
 Uygulama kimlik doğrulama başarılı olduktan sonra  [Ana Ekrana](../master/ScreenShots/Home.png) yönlendirir. An Ekran'da ilgili formlar için yölendirme butonları yer almaktadır.   
-### Kullanıcı İşlemleri Formu ###
+### 2. Kullanıcı İşlemleri Formu ###
 AD veritabanına kullanıcısı ile ilgili tüm süreç [bu form]((../master/ScreenShots/KullaniciArayuz.png)) üzerinden yürütülür. 
-- AD Sunucularında kullanıcı kaydı yaparken kullaniciadi.soyadi vb. küçük harf ve türkçe olmayan karakterle kayıt oluşturulması(kullanıcı Adı) tavsiye edilir. Uygulama, kayıt esnasında türkçe karakter de girmiş olsanız arka planda ingilizce karakter karşılığında kaydeder.  
+- AD Sunucularında kullanıcı kaydı yaparken kullaniciadi.soyadi vb. küçük harf ve türkçe olmayan karakterle kayıt oluşturulması(kullanıcı Adı) tavsiye edilir.  
+Uygulama, kayıt esnasında türkçe karakter de girmiş olsanız arka planda ingilizce karakter karşılığında kaydeder.    
 ilgili Sınıf : CharConvertion  
 ilgili kod bloğu : 
 ```
@@ -83,7 +84,7 @@ static string ConvertTRCharToENChar(string textToConvert)
 > Girilen: şaziye.test  
    Kaydedilen: saziye.test olacaktır
    
-### Parola Politikası ###
+#### 2.1. Parola Politikası ####
 Kullanıcı esnasında kullanıcı için oluşturulan parola, default GPO(Group Policy Object)   parola politikanıza uygun olmalıdır. uygulama uygunsuzluk durumunda uyarı verir ve kullanıcıyı kaydetmez.
 
 
