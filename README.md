@@ -55,7 +55,7 @@ Uygulamada AD Dizin hizmetleri için .Net Framework 3.5 ile gelen System.Directo
 Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
   
-Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) config dosyasındabelirtmemiz gerekir.~~
+Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) config dosyasındab elirtmemiz gerekir.
   ```
   <appSettings>
     <add key="path" value=""/>
