@@ -36,7 +36,7 @@ uygulama  test ve gerçek ortamında ;
    Sunucu tarafında ise ; 
  - Windows Server 2012 R2 Standart
  - Windows Server 2016 R2 Standart AD sunucuları ile sorunsuz çalışmıştır
- ## Ldap Bilgi ##
+ ## Ldap Uyumu ##
  uygulama LDAP2 ve LDAP3 ile uyumlu çalışmaktadır.  
  
 ## Gereksinimler ##
@@ -59,7 +59,7 @@ Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) 
   </appSettings>
 ```  
 **path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local  
-**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local (domainfqdn) 
+**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local (domainfqdn)   
 **computerDomain** : Domainizin adı. Örn : mydomain.local  
 
 Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
