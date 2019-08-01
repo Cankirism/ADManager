@@ -48,15 +48,14 @@ Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
   
-Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasında etiketi içerisinde belirtmemiz gerekir.
+Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasındabelirtmemiz gerekir.
    
-  '''<appSettings>
+  *<appSettings>
     <add key="path" value=""/>
     <add key="domainServer" value=""/>
     <add key="computerDomain" value=""/>
-    <add key="ClientSettingsProvider.ServiceUri" value="" />
-  </appSettings>
-'''
+  </appSettings>*
+
 
 
 
