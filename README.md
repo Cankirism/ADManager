@@ -1,7 +1,9 @@
 # Aktif Dizin Entegre Yönetim Uygulaması # 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ADManager&metric=alert_status)](https://sonarcloud.io/dashboard?id=ADManager)
+https://img.shields.io/github/last-commit/Cankirism/AdManager
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=ADManager)
+
 
 ## Bilgilendirme ##
 ADManager, Windows Aktif Dizin yapısı  kullanılan ortamlarda; AD sunucusu ile entegre çalışan, AD kullanıcı ve Cihaz Yönetim Uygulamasıdır. Saha IT ekibimizn talebi üzerine geliştirme kararı alınmış ve  açık kaynak olarak dağıtımı planlanmıştır.
