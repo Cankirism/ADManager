@@ -114,6 +114,9 @@ TRUSTED_FOR_DELEGATION	               0x80000	             524288
 Domain controller                   	0x82000	             532480	
 NOT_DELEGATED	                        0x100000           	1048576	
 PARTIAL_SECRETS_ACCOUNT               	0x04000000	         67108864	
+
+
+
   
             _durumKodlari.Add(512, "Normal Hesap");
 
