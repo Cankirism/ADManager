@@ -143,9 +143,9 @@ Bunlardan bazıları şu şekildedir:
             
             
             
-Daha fazla bilgi ![buradan](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) alınabilir.  
+Daha fazla bilgi [buradan](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) alınabilir.  
  ### 3. Bilgisayar İşlemleri ###
- AD viertabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur]((../master/ScreenShots/KullaniciArayuz.png)  
+ AD viertabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur](../master/ScreenShots/BilgisayarArayuz.png)  
  Form üzerinde;
  - Bilgisayar kaydı,
  - AD Veritabanında İp ve Bilgisayar Adı bazlı arama,
@@ -158,7 +158,7 @@ Daha fazla bilgi ![buradan](https://support.microsoft.com/en-us/help/305144/how-
  Formlar üzerinde yer alan datagrid üzerinki verilerin dökümünü hazırlar.  
  
  ## Kod Analizi ##
- Uygulama kaynak kod analizinde Sonarqube aracından faydalanılmıştır. Kod analiz ![sonuçları](https://sonarcloud.io/dashboard?id=ADManager) bulut ortamına yüklenmiştir.
+ Uygulama kaynak kod analizinde Sonarqube aracından faydalanılmıştır. Kod analiz [sonuçları](https://sonarcloud.io/dashboard?id=ADManager) bulut ortamına yüklenmiştir.
  
  
 
