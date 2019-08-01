@@ -86,7 +86,30 @@ static string ConvertTRCharToENChar(string textToConvert)
    Kaydedilen: saziye.test olacaktır
    
 #### 2.1. Parola Politikası ####
-Kullanıcı esnasında kullanıcı için oluşturulan parola, default GPO(Group Policy Object)   parola politikanıza uygun olmalıdır. uygulama uygunsuzluk durumunda uyarı verir ve kullanıcıyı kaydetmez.
+- Kullanıcı esnasında kullanıcı için oluşturulan parola, default GPO(Group Policy Object)   parola politikanıza uygun olmalıdır.  
+- Uygulama uygunsuzluk durumunda uyarı verir ve kullanıcıyı kaydetmez.
+- Kullanıcı kaydı yaparken "Aktif" seçimi yapılarak kaydı yapılmalıdır (Kullanıcıyı aktif yapmak için)
+#### 2.2 Kullanıcı Kodları ####
+Kullanıcıların AD veritabanında kulanıcı durum kodları bulunmaktadır.  
+Bunlardan bazıları şu şekildedir:
+(Hexadecimal)
+  
+            _durumKodlari.Add(512, "Normal Hesap");
+
+            //Uygulama üzerinden kullanıcı  eklendiğinde aktif ise 544 görünür.
+            _durumKodlari.Add(544, "Aktif-Parola Gerektirmiyor");
+
+            //Uygulama üzerine kullanıcı kayıt esnasında Pasif seçilmiş ise .
+            _durumKodlari.Add(546, "Pasif- Parola Gerektirmiyor");
+
+            //Pasif kullanıcı
+            _durumKodlari.Add(514, "Pasif");
+
+            // 66*** kodları parola süre limiti olmadığı (doesn't expire) zamanlardır.
+            _durumKodlari.Add(66048, "Aktif- Password Doesn't expire");
+            _durumKodlari.Add(66082, "Pasif- Password Doesn't expire");
+            _durumKodlari.Add(66050, "Pasif- Password Doesn't expire,not required");
+
 
 
   
