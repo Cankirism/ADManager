@@ -69,7 +69,7 @@ Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 ### 1. Uygulama Ana Form ###
 Uygulama kimlik doğrulama başarılı olduktan sonra  [Ana Ekrana](../master/ScreenShots/Home.png) yönlendirir. An Ekran'da ilgili formlar için yölendirme butonları yer almaktadır.   
 ### 2. Kullanıcı İşlemleri Formu ###
-AD veritabanına kullanıcısı ile ilgili tüm süreç [bu form]((../master/ScreenShots/KullaniciArayuz.png)) üzerinden yürütülür. 
+AD veritabanına kullanıcısı ile ilgili tüm süreç [bu form](../master/ScreenShots/KullaniciArayuz.png)) üzerinden yürütülür. 
 - AD Sunucularında kullanıcı kaydı yaparken kullaniciadi.soyadi vb. küçük harf ve türkçe olmayan karakterle kayıt oluşturulması(kullanıcı Adı) tavsiye edilir.  
 Uygulama, kayıt esnasında türkçe karakter de girmiş olsanız arka planda ingilizce karakter karşılığında kaydeder.    
 ilgili Sınıf : CharConvertion  
