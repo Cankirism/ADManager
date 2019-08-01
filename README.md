@@ -55,10 +55,10 @@ Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosya
     <add key="domainServer" value=""/>
     <add key="computerDomain" value=""/>
   </appSettings>
-```
-**path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local
-**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local
-**computerDomain** : Domainizin adı. Örn : mydomain.local
+```  
+**path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local  
+**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local  
+**computerDomain** : Domainizin adı. Örn : mydomain.local  
 
 
 
