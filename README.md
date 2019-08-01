@@ -64,6 +64,11 @@ Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) 
 
 Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 
+## Uygulama Arayüzü Kullanım ##
+
+Uygulama kimlik doğrulama başarılı olduğunda Ana Ekrana yönlendirir. 
+[!ScreenShots/Home.png]
+
 
 
 
