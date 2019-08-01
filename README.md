@@ -1,7 +1,7 @@
 # Aktif Dizin Entegre Yönetim Uygulaması # 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ADManager&metric=alert_status)](https://sonarcloud.io/dashboard?id=ADManager)
-https://img.shields.io/github/last-commit/Cankirism/AdManager
+![GitHub last commit](https://img.shields.io/github/last-commit/Cankirism/AdManager)
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=ADManager)
 
 
