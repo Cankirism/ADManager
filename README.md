@@ -77,8 +77,8 @@ Uygulama kimlik doğrulama başarılı olduktan sonra  [Ana Ekrana](../master/Sc
 AD veritabanına kullanıcısı ile ilgili tüm süreç [bu form](../master/ScreenShots/KullaniciArayuz.png) üzerinden yürütülür. 
 - AD Sunucularında kullanıcı kaydı yaparken kullaniciadi.soyadi vb. küçük harf ve türkçe olmayan karakterle kayıt oluşturulması(kullanıcı Adı) tavsiye edilir.  
 Uygulama, kayıt esnasında türkçe karakter de girmiş olsanız arka planda ingilizce karakter karşılığında kaydeder.    
-ilgili Sınıf : CharConvertion  
-ilgili kod bloğu : 
+ilgili Sınıf : EnglishChar  
+ilgili Method  : 
 ```
 static string ConvertTRCharToENChar(string textToConvert)
         {
