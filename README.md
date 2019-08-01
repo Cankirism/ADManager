@@ -36,6 +36,8 @@ uygulama  test ve gerçek ortamında ;
    Sunucu tarafında ise ; 
  - Windows Server 2012 R2 Standart
  - Windows Server 2016 R2 Standart AD sunucuları ile sorunsuz çalışmıştır
+ ## Ldap Bilgi ##
+ uygulama LDAP2 ve LDAP3 ile uyumlu çalışmaktadır.  
  
 ## Gereksinimler ##
 - Windows istemci cihaz  (Sunucu - client işletim sistemi ailesi)
@@ -48,7 +50,7 @@ Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
   
-Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasındabelirtmemiz gerekir.~~
+Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) config dosyasındabelirtmemiz gerekir.~~
   ```
   <appSettings>
     <add key="path" value=""/>
@@ -57,8 +59,11 @@ Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosya
   </appSettings>
 ```  
 **path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local  
-**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local  
+**domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local (domainfqdn) 
 **computerDomain** : Domainizin adı. Örn : mydomain.local  
+
+Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
+
 
 
 
