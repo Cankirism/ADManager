@@ -145,13 +145,13 @@ Bunlardan bazıları şu şekildedir:
             
 Daha fazla bilgi [buradan](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) alınabilir.  
  ### 3. Bilgisayar İşlemleri ###
- AD viertabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur](../master/ScreenShots/BilgisayarArayuz.png)  
+ AD veritabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur](../master/ScreenShots/BilgisayarArayuz.PNG)  
  Form üzerinde;
  - Bilgisayar kaydı,
  - AD Veritabanında İp ve Bilgisayar Adı bazlı arama,
  - AD veritabanı tüm  cihazları listeleme,
  - Cihazlara uzaktan direktif gönderme,
- - RPC aktif olan cihazların sistem kaynak durumlarını görebilmei yapılabilmektedir 
+ - RPC aktif olan cihazların sistem kaynak durumlarının takibi yapılabilmektedir 
  
  ### 4. Raporlama ###
  Her form üzerinde yer alan Excel ve PDF simgeleri raporla sınıfını tetikleyen bileşenlerdir.  
