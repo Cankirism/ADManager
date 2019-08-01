@@ -47,7 +47,8 @@ Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 ## Ön Düzenleme ## 
 Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
-  Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasında <appSettings> etiketi içerisinde belirtmemiz gerekir.
+  
+Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasında <appSettings> etiketi içerisinde belirtmemiz gerekir.
    
 
 >  <appSettings>
