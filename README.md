@@ -96,27 +96,34 @@ static string ConvertTRCharToENChar(string textToConvert)
 #### 2.2 Kullanıcı Kodları ####
 Kullanıcıların AD veritabanında kulanıcı durum kodları(attribute/flag) bulunmaktadır.  
 Bunlardan bazıları şu şekildedir:
-(Hexadecimal)
-
-PropertyFlag	                    Value In Hexadecimal	Value In Decimal	
-SCRIPT	                              0x0001	               1	
-ACCOUNTDISABLE                         0x0002	               2	
-NORMAL_ACCOUNT                       	0x0200	              512	
-Disabled Account	                     0x0202	              514	
-Enabled, Password Not Required	      0x0220	              544	
-Disabled, Password Not Required	      0x0222	              546	
-DONT_EXPIRE_PASSWORD	                  0x10000	             65536	
-Enabled, Password Doesn’t Expire    	0x10200	             66048	
-Disabled, Password Doesn’t Expire	   0x10202	             66050	
-Disabled, Password Doesn’t Expire 
-& Not Required                      	0x10222	             66082	
-TRUSTED_FOR_DELEGATION	               0x80000	             524288	
-Domain controller                   	0x82000	             532480	
-NOT_DELEGATED	                        0x100000           	1048576	
-PARTIAL_SECRETS_ACCOUNT               	0x04000000	         67108864	
 
 
+        Property Flag   Value In Hexadecimal       Value In Decimal    
+                SCRIPT            0x0001                  1  
+              ACCOUNTDISABLE      0x0002                  2
+              PASSWD_CANT_CHANGE  0x0040                 64
+              NORMAL_ACCOUNT      0x0200                 512
+              Disabled Account    0x0202                 514 
+              Enabled, Password 
+              Not Required        0x0220                 544 
+              Disabled, Password
+                Not Required      0x0222                 546 
+              DONT_EXPIRE
+                _PASSWORD         0x10000                65536
+              Enabled, Password
+                Doesn’t Expire    0x10200                66048   
+              Disabled, Password
+                Doesn’t Expire    0x10202                66050   
+              Disabled, Password
+                Doesn’t Expire
+                &Not Required     0x10222                 66082   x
 
+               DONT_REQ_PREAUTH   0x400000                4194304
+               PASSWORD_EXPIRED   0x800000                8388608
+               PARTIAL_SECRETS
+                _ACCOUNT          0x04000000              67108864
+
+  Uygulama üzerinde aşağıda yer aldığı şekilde belirtilmiştir.;  
   
             _durumKodlari.Add(512, "Normal Hesap");
 
