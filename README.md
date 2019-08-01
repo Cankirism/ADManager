@@ -42,7 +42,7 @@ uygulama  test ve gerçek ortamında ;
 - .Net Framework 4.5 + 
 
 ## Kurulum ## 
-Kurulum dosyasını buradan[ADmanager](Kurulum) indirerek kurulum yapılabilinmektedir.
+Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 
 
 
