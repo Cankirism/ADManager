@@ -50,7 +50,7 @@ Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız ge
   
 Bazı parametreleri (Ldap adres, domain sunucu adı ve domain adı) config dosyasındabelirtmemiz gerekir.
    
-  *<appSettings>
+  > <appSettings>
     <add key="path" value=""/>
     <add key="domainServer" value=""/>
     <add key="computerDomain" value=""/>
