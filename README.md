@@ -29,7 +29,7 @@ Bu uygulama ile ilk aşamada  planlanan  :
 - AD sunucu sağlık analizi yapılması ve fazlasıdır.
 
 ## Çalışma Ortamı  ##
-uygulama  test ve gerçek ortamında ;
+Uygulama  test ve gerçek ortamında ;
 - Windows 7 ,
 - Windows 8 ,
 - Windows 10 istemci işletim sistemi ailesinde sorunsuz çalışmıştır.  
@@ -37,7 +37,7 @@ uygulama  test ve gerçek ortamında ;
  - Windows Server 2012 R2 Standart
  - Windows Server 2016 R2 Standart AD sunucuları ile sorunsuz çalışmıştır
  ## Ldap Uyumu ##
- uygulama LDAP2 ve LDAP3 ile uyumlu çalışmaktadır.  
+ Uygulama LDAP2 ve LDAP3 ile uyumlu çalışmaktadır.  
  
 ## Gereksinimler ##
 - Windows istemci cihaz  (Sunucu - client işletim sistemi ailesi)
