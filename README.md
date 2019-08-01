@@ -42,6 +42,7 @@ Uygulama  test ve gerçek ortamında ;
 ## Gereksinimler ##
 - Windows istemci cihaz  (Sunucu - client işletim sistemi ailesi)
 - .Net Framework 4.5 + 
+- Ms Excel uygulaması (Raporlama)
 
 ## Kurulum ## 
 Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
