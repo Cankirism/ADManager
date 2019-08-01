@@ -5,21 +5,21 @@ Bu uygulama, 3. taraf uygulama ya da sunucu arayüzü kullanmadan Aktif Dizin ya
 
 Bu uygulama ile ilk aşamada  planlanan  :
 - Aktif Dizin veritabanından tüm kullanıcıları listeleme,
-- AD veri tabanına kullanıcı ekleme,
-- AD veri tabanında kullanıcı sorgulama,
-- AD veri tabanından kullanıcı silme,
-- AD veri tabanında kullanıcıyı pasif yapma,
-- AD veri tabanında pasif kullanıcıyı aktifleştirme,
-- AD veri tabanında kullanıcının üye gruplarını listeleme,
+- AD veritabanına kullanıcı ekleme,
+- AD veritabanında kullanıcı sorgulama,
+- AD veritabanından kullanıcı silme,
+- AD veritabanında kullanıcıyı pasif yapma,
+- AD veritabanında pasif kullanıcıyı aktifleştirme,
+- AD veritabanında kullanıcının üye gruplarını listeleme,
 - Kullanıcıya admin yetkisi atama,
 - Kullanıcıdan admin yetkisi alma,
-- AD veri tabanında Admin yetkisindeki kullanıcıları listeleme,
+- AD veritabanında Admin yetkisindeki kullanıcıları listeleme,
 - Kullanıcı parolasını değiştirme,
 - Kullanıcı hareketlerini görme,
 - Kullanıcı bazlı ya da toplu sorgu sonucu raporlama,
-- AD veri tabanından kayıtlı cihazları listeleme,
-- AD veri tabanında cihaz sorgulama,
-- AD veri tabanına cihaz ekleme,
+- AD veritabanından kayıtlı cihazları listeleme,
+- AD veritabanında cihaz sorgulama,
+- AD veritabanına cihaz ekleme,
 - Cihazlara uzaktan direktif uygulama,
 - Cihaz bazlı yada toplu sorgu sonucu raporlama işlemleri,
 - AD Sunucusunda GPO düzenlemesi yapılması,
@@ -37,10 +37,11 @@ Uygulama  test ve gerçek ortamında ;
  - Windows Server 2012 R2 Standart
  - Windows Server 2016 R2 Standart AD sunucuları ile sorunsuz çalışmıştır
  ## Ldap Uyumu ##
- Uygulama LDAP2 ve LDAP3 ile uyumlu çalışmaktadır.  
+ Ldap(LightWeight Directory Access Protocol), istemci ile sunucu haberleşmesinde kullanılan protokoldür.  
+ Uygulama LDAPv2 ve LDAPv3 ile uyumlu çalışmaktadır.  
  
 ## Gereksinimler ##
-- Windows istemci cihaz  (Sunucu - client işletim sistemi ailesi)
+- Windows İşletim Sistemi (Sunucu - client işletim sistemi ailesi)
 - .Net Framework 4.5 + 
 - Ms Excel uygulaması (Raporlama)
 
@@ -48,6 +49,9 @@ Uygulama  test ve gerçek ortamında ;
 Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 
 ## Ön Düzenleme ## 
+Uygulamada AD Dizin hizmetleri için .Net Framework 3.5 ile gelen System.DirectoryServices.AccountManagement namespace'i tercih edilmiştir.
+- Temel dizin hizmetleri tamınlaması için PrincipialContext sınıfı, kullanıcı işlemleri için UserPrincipial, Cihaz işlemlerinde ComputerPrincipial sınıfı kulllanılmıştır.
+
 Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
   
@@ -90,9 +94,26 @@ static string ConvertTRCharToENChar(string textToConvert)
 - Uygulama uygunsuzluk durumunda uyarı verir ve kullanıcıyı kaydetmez.
 - Kullanıcı kaydı yaparken "Aktif" seçimi yapılarak kaydı yapılmalıdır (Kullanıcıyı aktif yapmak için)
 #### 2.2 Kullanıcı Kodları ####
-Kullanıcıların AD veritabanında kulanıcı durum kodları bulunmaktadır.  
+Kullanıcıların AD veritabanında kulanıcı durum kodları(attribute/flag) bulunmaktadır.  
 Bunlardan bazıları şu şekildedir:
 (Hexadecimal)
+
+PropertyFlag	                    Value In Hexadecimal	Value In Decimal	
+SCRIPT	                              0x0001	               1	
+ACCOUNTDISABLE                         0x0002	               2	
+NORMAL_ACCOUNT                       	0x0200	              512	
+Disabled Account	                     0x0202	              514	
+Enabled, Password Not Required	      0x0220	              544	
+Disabled, Password Not Required	      0x0222	              546	
+DONT_EXPIRE_PASSWORD	                  0x10000	             65536	
+Enabled, Password Doesn’t Expire    	0x10200	             66048	
+Disabled, Password Doesn’t Expire	   0x10202	             66050	
+Disabled, Password Doesn’t Expire 
+& Not Required                      	0x10222	             66082	
+TRUSTED_FOR_DELEGATION	               0x80000	             524288	
+Domain controller                   	0x82000	             532480	
+NOT_DELEGATED	                        0x100000           	1048576	
+PARTIAL_SECRETS_ACCOUNT               	0x04000000	         67108864	
   
             _durumKodlari.Add(512, "Normal Hesap");
 
@@ -109,6 +130,7 @@ Bunlardan bazıları şu şekildedir:
             _durumKodlari.Add(66048, "Aktif- Password Doesn't expire");
             _durumKodlari.Add(66082, "Pasif- Password Doesn't expire");
             _durumKodlari.Add(66050, "Pasif- Password Doesn't expire,not required");
+
 
 
 
