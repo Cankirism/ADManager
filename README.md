@@ -74,7 +74,7 @@ Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 ### 1. Uygulama Ana Form ###
 Uygulama kimlik doğrulama başarılı olduktan sonra  [Ana Ekrana](../master/ScreenShots/Home.png) yönlendirir. An Ekran'da ilgili formlar için yölendirme butonları yer almaktadır.   
 ### 2. Kullanıcı İşlemleri Formu ###
-AD veritabanına kullanıcısı ile ilgili tüm süreç [bu form](../master/ScreenShots/KullaniciArayuz.png)) üzerinden yürütülür. 
+AD veritabanına kullanıcısı ile ilgili tüm süreç [bu form](../master/ScreenShots/KullaniciArayuz.png) üzerinden yürütülür. 
 - AD Sunucularında kullanıcı kaydı yaparken kullaniciadi.soyadi vb. küçük harf ve türkçe olmayan karakterle kayıt oluşturulması(kullanıcı Adı) tavsiye edilir.  
 Uygulama, kayıt esnasında türkçe karakter de girmiş olsanız arka planda ingilizce karakter karşılığında kaydeder.    
 ilgili Sınıf : CharConvertion  
@@ -139,7 +139,30 @@ Bunlardan bazıları şu şekildedir:
             // 66*** kodları parola süre limiti olmadığı (doesn't expire) zamanlardır.
             _durumKodlari.Add(66048, "Aktif- Password Doesn't expire");
             _durumKodlari.Add(66082, "Pasif- Password Doesn't expire");
-            _durumKodlari.Add(66050, "Pasif- Password Doesn't expire,not required");
+            _durumKodlari.Add(66050, "Pasif- Password Doesn't expire,not required");  
+            
+            
+            
+Daha fazla bilgi ![buradan](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) alınabilir.  
+ ## 3. Bilgisayar İşlemleri ##
+ AD viertabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur]((../master/ScreenShots/KullaniciArayuz.png)  
+ Form üzerinde;
+ - Bilgisayar kaydı,
+ - AD Veritabanında İp ve Bilgisayar Adı bazlı arama,
+ - AD veritabanı tüm  cihazları listeleme,
+ - Cihazlara uzaktan direktif gönderme,
+ - RPC aktif olan cihazların sistem kaynak durumlarını görebilmei yapılabilmektedir 
+ 
+ ## Raporlama ##
+ Her form üzerinde yer alan Excel ve PDF simgeleri raporla sınıfını tetikleyen bileşenlerdir.  
+ Formlar üzerinde yer alan datagrid üzerinki verilerin dökümünü hazırlar.  
+ 
+ 
+     
+     
+     
+     
+     
 
 
 
