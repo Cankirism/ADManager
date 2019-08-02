@@ -154,15 +154,21 @@ Daha fazla bilgi [buradan](https://support.microsoft.com/en-us/help/305144/how-t
 ilgili form üzerinde şu parametreleri girilerek kullanıcı kaydı yapılır :  
 - Kullanıcı Adı
 - Kullanıcı Soyadı 
-- Kullanıcının AD kullanıc adı (SamAccountName) / Uygulama otomatik olarak adi.soyadi şeklinde oluşturur.  
-- Kullanıcının Parolası (GPO ile uyumlu)
+- Kullanıcının AD kullanıcı adı (SamAccountName) / Uygulama otomatik olarak adi.soyadi şeklinde oluşturur.  
+- Kullanıcının Parolası (GPO ile uyumlu)  
+
 Uygullama, Kullanıcı başarılı şekilde kaydedildiksen sonra, AD Ortamında ilk oturum açılışında yeni parola oluşturması sağlar.  
+
 İlgili Sınıf: BussinessUser
-İlgili Method : CreateUserAccount   
-  userPrincipial.Enabled = true;
+İlgili Method : CreateUserAccount  
+
+                    userPrincipial.Enabled = true;
                     userPrincipial.Save();
-                    userPrincipial.ExpirePasswordNow()  
-                    
+                    userPrincipial.ExpirePasswordNow();
+#### 2.4. Diğer Özellikler ####
+Kullanıcılar ile ilgili diğer düzenlemeler Context Menü aracılığıyla yapılır. Datagrid üzerinde ilgili kullanıcının satırı seçilir ve sağ tık ile menü açılır.  
+
+                      
  ### 3. Bilgisayar İşlemleri ###
  AD veritabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur](../master/ScreenShots/BilgisayarArayuz.PNG)  
  Form üzerinde;
