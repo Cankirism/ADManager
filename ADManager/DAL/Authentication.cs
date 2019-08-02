@@ -25,7 +25,7 @@ namespace ADManager
             string path = System.Configuration.ConfigurationManager.AppSettings["path"];
             using (DirectoryEntry ldapEntry = new DirectoryEntry(path, _userName, _password, AuthenticationTypes.Secure))
             {
-                object nativeObject = ldapEntry.NativeObject;
+            
                 authenticated = true;
                 ldapEntry.Close();
             }
