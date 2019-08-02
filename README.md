@@ -150,6 +150,19 @@ Bunlardan bazıları şu şekildedir:
             
             
 Daha fazla bilgi [buradan](https://support.microsoft.com/en-us/help/305144/how-to-use-useraccountcontrol-to-manipulate-user-account-properties) alınabilir.  
+#### 2.3. Kullanıcı Kayıt ####
+ilgili form üzerinde şu parametreleri girilerek kullanıcı kaydı yapılır :  
+- Kullanıcı Adı
+- Kullanıcı Soyadı 
+- Kullanıcının AD kullanıc adı (SamAccountName) / Uygulama otomatik olarak adi.soyadi şeklinde oluşturur.  
+- Kullanıcının Parolası (GPO ile uyumlu)
+Uygullama, Kullanıcı başarılı şekilde kaydedildiksen sonra, AD Ortamında ilk oturum açılışında yeni parola oluşturması sağlar.  
+İlgili Sınıf: BussinessUser
+İlgili Method : CreateUserAccount   
+  userPrincipial.Enabled = true;
+                    userPrincipial.Save();
+                    userPrincipial.ExpirePasswordNow()  
+                    
  ### 3. Bilgisayar İşlemleri ###
  AD veritabanında kayıtlı kullanıcı bilgisayarları ile işlemlerin yapıldığı [formdur](../master/ScreenShots/BilgisayarArayuz.PNG)  
  Form üzerinde;
