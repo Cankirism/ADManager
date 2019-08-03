@@ -53,16 +53,16 @@ Uygulama  test ve gerçek ortamında ;
 - Ms Excel uygulaması (Raporlama)
 
 ## Kurulum ## 
-Kurulum dosyasını [buradan](Kurulum) indirilerek kurulum başlatılabilir.
+Kurulum dosyası [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 
 ## Ön Düzenleme ## 
 Uygulamada AD Dizin hizmetleri için .Net Framework 3.5 ile gelen System.DirectoryServices.AccountManagement namespace'i tercih edilmiştir.
-- Temel dizin hizmetleri tamınlaması için PrincipialContext sınıfı, kullanıcı işlemleri için UserPrincipial, Cihaz işlemlerinde ComputerPrincipial sınıfı kulllanılmıştır.
+- Temel dizin hizmetleri tamınlaması için PrincipialContext sınıfı, kullanıcı işlemleri için UserPrincipial, Cihaz işlemlerinde ComputerPrincipial sınıfı kullanılmıştır.
 
-Kurulum yaptıktan sonra yapılandırma dosyasında değişiklikler yapmamız gerekecektir.  
+Kurulum tamamlandıktan sonra yapılandırma dosyasında bazı değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
   
-Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) config dosyasındab elirtmemiz gerekir.
+Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) config dosyasında belirtmemiz gerekir.
   ```
   <appSettings>
     <add key="path" value=""/>
@@ -97,7 +97,7 @@ static string ConvertTRCharToENChar(string textToConvert)
    Kaydedilen: saziye.test olacaktır
    
 #### 2.1. Parola Politikası ####
-- Kullanıcı esnasında kullanıcı için oluşturulan parola, default GPO(Group Policy Object)   parola politikanıza uygun olmalıdır.  
+- Kullanıcı kaydetme esnasında kullanıcı için oluşturulan parola, default GPO(Group Policy Object) parola politikanıza uygun olmalıdır.  
 - Uygulama uygunsuzluk durumunda uyarı verir ve kullanıcıyı kaydetmez.
 - Kullanıcı kaydı yaparken "Aktif" seçimi yapılarak kaydı yapılmalıdır (Kullanıcıyı aktif yapmak için)
 #### 2.2 Kullanıcı Kodları ####
@@ -158,7 +158,7 @@ ilgili form üzerinde şu parametreleri girilerek kullanıcı kaydı yapılır :
 - Kullanıcının AD kullanıcı adı (SamAccountName) / Uygulama otomatik olarak adi.soyadi şeklinde oluşturur.  
 - Kullanıcının Parolası (GPO ile uyumlu)  
 
-Uygullama, Kullanıcı başarılı şekilde kaydedildiksen sonra, AD Ortamında ilk oturum açılışında yeni parola oluşturması sağlar.  
+Uygulama, Kullanıcıyı başarılı şekilde kaydettikten sonra, Kullanıcının AD Ortamında ilk oturum açılışında yeni parola oluşturmasını sağlar.  
 
 İlgili Sınıf: BussinessUser
 İlgili Method : CreateUserAccount  
