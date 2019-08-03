@@ -57,7 +57,7 @@ Kurulum dosyası [buradan](Kurulum) indirilerek kurulum başlatılabilir.
 
 ## Ön Düzenleme ## 
 Uygulamada AD Dizin hizmetleri için .Net Framework 3.5 ile gelen System.DirectoryServices.AccountManagement namespace'i tercih edilmiştir.
-- Temel dizin hizmetleri tamınlaması için PrincipialContext sınıfı, kullanıcı işlemleri için UserPrincipial, Cihaz işlemlerinde ComputerPrincipial sınıfı kullanılmıştır.
+- Temel dizin hizmetleri tanımlaması için PrincipialContext sınıfı, kullanıcı işlemleri için UserPrincipial, Cihaz işlemlerinde ComputerPrincipial sınıfı kullanılmıştır.
 
 Kurulum tamamlandıktan sonra yapılandırma dosyasında bazı değişiklikler yapmamız gerekecektir.  
 > Uygulama Kurulduğu dizin\Admanager.exe.config   
