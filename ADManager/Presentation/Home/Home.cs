@@ -23,6 +23,7 @@ namespace ADManager
         private string _logonPass;
         private DataTable _dtKullaniciListesi;
         private int rowCount = 0;
+       
       
         public Home()
         {
@@ -177,6 +178,9 @@ namespace ADManager
                 case "Contactbtn":
                     formName = "Contact";
                     break;
+                case "OUBtn":
+                    formName = "ou";
+                    break;
             }
 
             CheckOpenForm(formName, isOpen);
@@ -215,6 +219,9 @@ namespace ADManager
 
                     case "Contact":
                         ShowForm<Contact>();
+                        break;
+                    case "ou":
+                        ShowForm<ou>();
                         break;
                 }
             }
@@ -280,6 +287,11 @@ namespace ADManager
         private void GithubBtn_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start($"https://github.com/Cankirism");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenForm(sender);
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

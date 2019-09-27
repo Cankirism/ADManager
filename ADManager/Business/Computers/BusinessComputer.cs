@@ -16,10 +16,10 @@ namespace ADManager
         #region field-Property
 
         readonly Computer _computer;
-        public  string ComputerDomain { get; set; }
+        public string ComputerDomain { get; set; }
         public string ErrorMessage { get; set; }
         public List<ComputersProperties> ComputerList { get; set; }
-        
+
         #endregion
 
         #region Constructors
@@ -33,7 +33,7 @@ namespace ADManager
         #endregion
 
         #region Methodlar 
-        
+
         /// <summary>
         /// ComputerForm UI'da Sorgula butonu ya da Tük kayıtları getir butonu tıklandığından çağrılan method.
         /// </summary>
@@ -111,7 +111,7 @@ namespace ADManager
             for (int a = 0; a < ComputerList.Count; a++)
             {
                 var computerPro = ComputerList[a];
-                isContain = EnglishChar.ConvertTRCharToENChar( computerPro.computerName.ToUpper()).Contains(arananPc) || computerPro.ipAdress.Contains(arananPc);
+                isContain = EnglishChar.ConvertTRCharToENChar(computerPro.computerName.ToUpper()).Contains(arananPc) || computerPro.ipAdress.Contains(arananPc);
 
                 if (isContain)
                 {
@@ -120,6 +120,22 @@ namespace ADManager
             }
 
             return bulunanCihazlar;
+        }
+
+        #endregion
+
+        #region BilgisayarKayit
+        public string SaveComputer(string computerName,string yapisalBirim)
+        {
+            using (var principialContext = _computer.SetPrincipialContext(yapisalBirim))
+            using (var computerPrincipial = _computer.SetComputerPrincipial(principialContext))
+            {
+                computerPrincipial.Name = computerName;
+                computerPrincipial.Enabled = true;
+                computerPrincipial.Save();
+                return "Kayıt Başarılı";
+            }
+
         }
 
         #endregion

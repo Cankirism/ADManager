@@ -71,6 +71,7 @@ namespace ADManager
         /// <returns></returns>
         private UsersProperties GetUserProperties(DirectoryEntry de)
         {
+            
             SearchResult searchResult = user.SetSearchResult(de);
             var usersProperties = new UsersProperties();
             usersProperties.cannonicalName = de.Properties["cn"].Value.ToString();
@@ -79,14 +80,18 @@ namespace ADManager
             usersProperties.userAccountControl = UserAccountControl(Convert.ToInt32(de.Properties["useraccountcontrol"][0]));
             usersProperties.whenCreated = Convert.ToDateTime(de.Properties["whenCreated"].Value).ToLocalTime().ToString();
             usersProperties.pwdLastSet = DateTime.FromFileTime((long)searchResult.Properties["pwdLastSet"][0]).ToShortDateString();
-            usersProperties.lastLogon = DateTime.FromFileTime((long)searchResult.Properties["lastLogon"][0]).ToLocalTime().ToString();
+            if (searchResult.Properties.Contains("lastLogon"))
+            { usersProperties.lastLogon = DateTime.FromFileTime((long)searchResult.Properties["lastLogon"][0]).ToLocalTime().ToString(); }
+            
+            else 
+                usersProperties.lastLogon = string.Empty;
+            
             return usersProperties;
 
         }
 
         public  DataTable DataTableAktar(IEnumerable<UsersProperties> userList)
         {
-            
             DataTableFill fillDataTable = new DataTableFill();
             return fillDataTable.FillDataTable(userList);
         }
@@ -112,7 +117,6 @@ namespace ADManager
                         userList.Add(GetUserProperties(de));
                     }
                 }
-
             }
 
             return userList;
@@ -135,7 +139,7 @@ namespace ADManager
         {
             try
             {
-                using (PrincipalContext principialCon = user.BaglantiKur())
+                using (PrincipalContext principialCon = user.BaglantiKur(userFormInputs.OrganUnit))
                 using (UserPrincipal userPrincipial = user.SetUserPrincipial(principialCon, userFormInputs.userName, userFormInputs.userPass))
                 {
                     userPrincipial.SamAccountName = userFormInputs.userName;
@@ -148,6 +152,12 @@ namespace ADManager
                     _stateForTest = true;
                     ResponseMessage = "Kullanıcı kaydı başarılı";
                 }
+            }
+            catch (DirectoryServicesCOMException ex)
+            {
+                _stateForTest = false;
+                ResponseMessage = ex.Message;
+
             }
             catch (Exception ex )
             {

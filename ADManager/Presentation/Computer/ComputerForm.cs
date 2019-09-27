@@ -30,6 +30,16 @@ namespace ADManager
             SetDataGridSettings();
             System.Windows.Forms.ToolTip tooltip = new ToolTip();
             tooltip.SetToolTip(this.SearchTxt, "Cihaz İp ya da Cihaz  adını giriniz");
+            GetOuList();
+        }
+
+        private void GetOuList()
+        {
+            OUClass ouSinif = new OUClass();
+            foreach (var yp in ouSinif.GetAllOU())
+            {
+                comboBox1.Items.Add(yp);
+            }
         }
         private void SetDataGridSettings()
         {
@@ -245,6 +255,29 @@ namespace ADManager
         private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void KaydetBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(NameTxt.Text))
+            { MessageBox.Show("Makine ismi Boş Olamaz", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            else
+            { SaveComputer();}
+                  
+        }
+
+        private void SaveComputer()
+        {
+            ExceptionCatcher(() =>
+            {
+               MessageBox.Show( _computerBl.SaveComputer(NameTxt.Text,(comboBox1.SelectedIndex>=0)? comboBox1.SelectedItem.ToString():null));
+            });
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void GetComputerInfo(object sender, EventArgs e)

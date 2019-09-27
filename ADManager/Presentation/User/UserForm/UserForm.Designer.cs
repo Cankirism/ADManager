@@ -56,6 +56,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.SearchTxt = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.OuCombo = new System.Windows.Forms.ComboBox();
             this.radioButtonPasif = new System.Windows.Forms.RadioButton();
             this.radioButtonAktif = new System.Windows.Forms.RadioButton();
             this.KaydetBtn = new System.Windows.Forms.Button();
@@ -187,7 +189,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 183);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 194);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -198,7 +200,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(1276, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(1276, 313);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
@@ -259,7 +261,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1283, 177);
+            this.panel4.Size = new System.Drawing.Size(1283, 188);
             this.panel4.TabIndex = 3;
             // 
             // groupBox3
@@ -373,6 +375,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.OuCombo);
             this.groupBox1.Controls.Add(this.radioButtonPasif);
             this.groupBox1.Controls.Add(this.radioButtonAktif);
             this.groupBox1.Controls.Add(this.KaydetBtn);
@@ -392,11 +396,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kullanıcı Kayıt";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(6, 121);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Yapısal Birim OU";
+            // 
+            // OuCombo
+            // 
+            this.OuCombo.FormattingEnabled = true;
+            this.OuCombo.Location = new System.Drawing.Point(113, 116);
+            this.OuCombo.Name = "OuCombo";
+            this.OuCombo.Size = new System.Drawing.Size(219, 23);
+            this.OuCombo.TabIndex = 10;
+            // 
             // radioButtonPasif
             // 
             this.radioButtonPasif.AutoSize = true;
             this.radioButtonPasif.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonPasif.Location = new System.Drawing.Point(491, 117);
+            this.radioButtonPasif.Location = new System.Drawing.Point(593, 117);
             this.radioButtonPasif.Name = "radioButtonPasif";
             this.radioButtonPasif.Size = new System.Drawing.Size(52, 19);
             this.radioButtonPasif.TabIndex = 9;
@@ -408,7 +430,7 @@
             // 
             this.radioButtonAktif.AutoSize = true;
             this.radioButtonAktif.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonAktif.Location = new System.Drawing.Point(438, 117);
+            this.radioButtonAktif.Location = new System.Drawing.Point(535, 117);
             this.radioButtonAktif.Name = "radioButtonAktif";
             this.radioButtonAktif.Size = new System.Drawing.Size(52, 19);
             this.radioButtonAktif.TabIndex = 8;
@@ -423,7 +445,7 @@
             this.KaydetBtn.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.KaydetBtn.Image = ((System.Drawing.Image)(resources.GetObject("KaydetBtn.Image")));
             this.KaydetBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.KaydetBtn.Location = new System.Drawing.Point(632, 117);
+            this.KaydetBtn.Location = new System.Drawing.Point(651, 117);
             this.KaydetBtn.Name = "KaydetBtn";
             this.KaydetBtn.Size = new System.Drawing.Size(94, 33);
             this.KaydetBtn.TabIndex = 5;
@@ -490,14 +512,14 @@
             // 
             // UserNameTxt
             // 
-            this.UserNameTxt.Location = new System.Drawing.Point(104, 81);
+            this.UserNameTxt.Location = new System.Drawing.Point(113, 79);
             this.UserNameTxt.Name = "UserNameTxt";
             this.UserNameTxt.Size = new System.Drawing.Size(219, 23);
             this.UserNameTxt.TabIndex = 3;
             // 
             // NameTxt
             // 
-            this.NameTxt.Location = new System.Drawing.Point(104, 35);
+            this.NameTxt.Location = new System.Drawing.Point(113, 35);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(219, 23);
             this.NameTxt.TabIndex = 2;
@@ -644,5 +666,7 @@
         private System.Windows.Forms.Button button2;
         private System.ComponentModel.BackgroundWorker bgWorker;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox OuCombo;
     }
 }

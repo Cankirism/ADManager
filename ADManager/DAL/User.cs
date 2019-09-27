@@ -27,6 +27,21 @@ namespace ADManager
             PrincipalContext _principialContext = new PrincipalContext(ContextType.Domain,_domain, _userName, _userPassword);
             return _principialContext;
         }
+        public PrincipalContext BaglantiKur(string yapisalBirim)
+        {
+            if (string.IsNullOrEmpty(yapisalBirim))
+            {
+                return BaglantiKur();
+            }
+            else
+            {
+                PrincipalContext _principialContext = new PrincipalContext(ContextType.Domain, "CANKIRISM", $"OU={yapisalBirim},DC=cankirism,DC=local", _userName, _userPassword);
+                return _principialContext;
+            }
+           
+
+          
+        }
         public UserPrincipal SetUserPrincipial(PrincipalContext con)
         {
             UserPrincipal userPrincipial = new UserPrincipal(con);

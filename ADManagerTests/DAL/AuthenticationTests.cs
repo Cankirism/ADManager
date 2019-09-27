@@ -17,6 +17,10 @@ namespace ADManager.Tests
             var auth = new  Authentication("admin user","admin pass");
             bool actual = auth.IsAuthenticated();
             Assert.AreEqual(true, actual);
+
+
+        
+
         }
     }
 }

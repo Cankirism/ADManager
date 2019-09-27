@@ -62,6 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\CharConvertion\EnglishChar.cs" />
+    <Compile Include="ou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ou.Designer.cs">
+      <DependentUpon>ou.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OU\OUClass.cs" />
     <Compile Include="Presentation\Contact\Contact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +154,9 @@
       <DependentUpon>AdminUye.cs</DependentUpon>
     </Compile>
     <Compile Include="Business\Users\UsersProperties.cs" />
+    <EmbeddedResource Include="ou.resx">
+      <DependentUpon>ou.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\About\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>

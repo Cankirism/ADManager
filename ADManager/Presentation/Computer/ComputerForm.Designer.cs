@@ -30,15 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComputerForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.FormCloseBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ExitBtn = new System.Windows.Forms.Button();
             this.ExcelBtn = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NameTxt = new System.Windows.Forms.TextBox();
@@ -47,8 +45,6 @@
             this.AraBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.SearchTxt = new System.Windows.Forms.TextBox();
-            this.radioButtonPasif = new System.Windows.Forms.RadioButton();
-            this.radioButtonAktif = new System.Windows.Forms.RadioButton();
             this.KaydetBtn = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -71,9 +67,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -109,28 +108,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(82)))), ((int)(((byte)(182)))));
-            this.panel3.Controls.Add(this.ExitBtn);
-            this.panel3.Controls.Add(this.ExcelBtn);
-            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 522);
+            this.panel3.Location = new System.Drawing.Point(0, 528);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1281, 60);
+            this.panel3.Size = new System.Drawing.Size(1281, 54);
             this.panel3.TabIndex = 2;
-            // 
-            // ExitBtn
-            // 
-            this.ExitBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ExitBtn.BackgroundImage")));
-            this.ExitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ExitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(82)))), ((int)(((byte)(182)))));
-            this.ExitBtn.Location = new System.Drawing.Point(1103, 9);
-            this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(37, 32);
-            this.ExitBtn.TabIndex = 8;
-            this.ExitBtn.UseVisualStyleBackColor = true;
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // ExcelBtn
             // 
@@ -139,23 +122,14 @@
             this.ExcelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExcelBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ExcelBtn.Image = ((System.Drawing.Image)(resources.GetObject("ExcelBtn.Image")));
-            this.ExcelBtn.Location = new System.Drawing.Point(1151, 7);
+            this.ExcelBtn.Location = new System.Drawing.Point(499, 24);
             this.ExcelBtn.Name = "ExcelBtn";
-            this.ExcelBtn.Size = new System.Drawing.Size(37, 34);
+            this.ExcelBtn.Size = new System.Drawing.Size(159, 34);
             this.ExcelBtn.TabIndex = 5;
+            this.ExcelBtn.Text = "Raporla - Excel";
             this.ExcelBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.ExcelBtn.UseVisualStyleBackColor = true;
             this.ExcelBtn.Click += new System.EventHandler(this.ExcelBtn_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1205, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -172,7 +146,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(12, 41);
+            this.label1.Location = new System.Drawing.Point(6, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 4;
@@ -180,7 +154,7 @@
             // 
             // NameTxt
             // 
-            this.NameTxt.Location = new System.Drawing.Point(104, 35);
+            this.NameTxt.Location = new System.Drawing.Point(88, 35);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(219, 25);
             this.NameTxt.TabIndex = 3;
@@ -242,54 +216,31 @@
             this.SearchTxt.TabIndex = 0;
             this.SearchTxt.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SearchTxt_MouseDown);
             // 
-            // radioButtonPasif
-            // 
-            this.radioButtonPasif.AutoSize = true;
-            this.radioButtonPasif.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonPasif.Location = new System.Drawing.Point(279, 77);
-            this.radioButtonPasif.Name = "radioButtonPasif";
-            this.radioButtonPasif.Size = new System.Drawing.Size(50, 20);
-            this.radioButtonPasif.TabIndex = 9;
-            this.radioButtonPasif.TabStop = true;
-            this.radioButtonPasif.Text = "Pasif";
-            this.radioButtonPasif.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonAktif
-            // 
-            this.radioButtonAktif.AutoSize = true;
-            this.radioButtonAktif.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonAktif.Location = new System.Drawing.Point(226, 77);
-            this.radioButtonAktif.Name = "radioButtonAktif";
-            this.radioButtonAktif.Size = new System.Drawing.Size(47, 20);
-            this.radioButtonAktif.TabIndex = 8;
-            this.radioButtonAktif.TabStop = true;
-            this.radioButtonAktif.Text = "Aktif";
-            this.radioButtonAktif.UseVisualStyleBackColor = true;
-            // 
             // KaydetBtn
             // 
             this.KaydetBtn.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.KaydetBtn.Image = ((System.Drawing.Image)(resources.GetObject("KaydetBtn.Image")));
             this.KaydetBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.KaydetBtn.Location = new System.Drawing.Point(329, 35);
+            this.KaydetBtn.Location = new System.Drawing.Point(660, 33);
             this.KaydetBtn.Name = "KaydetBtn";
-            this.KaydetBtn.Size = new System.Drawing.Size(94, 27);
+            this.KaydetBtn.Size = new System.Drawing.Size(85, 29);
             this.KaydetBtn.TabIndex = 4;
             this.KaydetBtn.Text = "Kaydet";
             this.KaydetBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.KaydetBtn.UseVisualStyleBackColor = true;
+            this.KaydetBtn.Click += new System.EventHandler(this.KaydetBtn_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButtonPasif);
-            this.groupBox1.Controls.Add(this.radioButtonAktif);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.KaydetBtn);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.NameTxt);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(492, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(751, 156);
+            this.groupBox1.Size = new System.Drawing.Size(751, 85);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cihaz Kayıt";
@@ -307,12 +258,16 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.button2);
             this.groupBox3.Controls.Add(this.ClearTxtBtn);
+            this.groupBox3.Controls.Add(this.ExcelBtn);
             this.groupBox3.Controls.Add(this.HepsiniGetirBtn);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox3.Location = new System.Drawing.Point(12, 97);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(470, 65);
+            this.groupBox3.Size = new System.Drawing.Size(1231, 65);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Diğer";
@@ -324,7 +279,7 @@
             this.ClearTxtBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearTxtBtn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ClearTxtBtn.Image = ((System.Drawing.Image)(resources.GetObject("ClearTxtBtn.Image")));
-            this.ClearTxtBtn.Location = new System.Drawing.Point(22, 23);
+            this.ClearTxtBtn.Location = new System.Drawing.Point(173, 20);
             this.ClearTxtBtn.Name = "ClearTxtBtn";
             this.ClearTxtBtn.Size = new System.Drawing.Size(107, 34);
             this.ClearTxtBtn.TabIndex = 9;
@@ -341,7 +296,7 @@
             this.HepsiniGetirBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.HepsiniGetirBtn.Image = ((System.Drawing.Image)(resources.GetObject("HepsiniGetirBtn.Image")));
             this.HepsiniGetirBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.HepsiniGetirBtn.Location = new System.Drawing.Point(136, 17);
+            this.HepsiniGetirBtn.Location = new System.Drawing.Point(301, 19);
             this.HepsiniGetirBtn.Name = "HepsiniGetirBtn";
             this.HepsiniGetirBtn.Size = new System.Drawing.Size(129, 40);
             this.HepsiniGetirBtn.TabIndex = 1;
@@ -355,15 +310,15 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -373,29 +328,29 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 177);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1281, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(1281, 351);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
@@ -529,6 +484,55 @@
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(315, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 15);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Yapısal Birim(OU)";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(429, 35);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 25);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(82)))), ((int)(((byte)(182)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(692, 25);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(159, 34);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "PDF Hazırla";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(82)))), ((int)(((byte)(182)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(857, 25);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(159, 34);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Çıkış";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // ComputerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,7 +549,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -572,8 +575,6 @@
         private System.Windows.Forms.Button AraBtn;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox SearchTxt;
-        private System.Windows.Forms.RadioButton radioButtonPasif;
-        private System.Windows.Forms.RadioButton radioButtonAktif;
         private System.Windows.Forms.Button KaydetBtn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel4;
@@ -582,7 +583,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button ExcelBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -592,7 +592,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button ClearTxtBtn;
         private System.Windows.Forms.Button HepsiniGetirBtn;
@@ -601,5 +600,9 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
     }
 }
