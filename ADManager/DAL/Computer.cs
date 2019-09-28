@@ -31,18 +31,7 @@ namespace ADManager
             return principialContext;
 
         }
-        public PrincipalContext SetPrincipialContext(string yapisalBirim)
-        {
-            if (string.IsNullOrEmpty(yapisalBirim)) { return SetPrincipialContext(); }
-
-            else
-            {
-                PrincipalContext principialContext = new PrincipalContext(ContextType.Domain, "CANKIRISM", $"OU={yapisalBirim},DC=cankirism,DC=local");
-                return principialContext;
-            } 
-
-        }
-
+       
         public PrincipalContext SetPrincipialContext(string computerName, string yapisalBirim)
         {
             if (string.IsNullOrEmpty(yapisalBirim))
