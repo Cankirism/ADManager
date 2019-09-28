@@ -10,12 +10,11 @@ namespace ADManager
     class OUClass
     {
 
-        private const string LDAP_PATH = "LDAP://DC=cankirism,dc=local";
-
+        private  string _ldapOu= System.Configuration.ConfigurationManager.AppSettings["LDAPOU"];
         public List<string> GetAllOU()
         {
             List<string> ouList = new List<string>();
-            DirectoryEntry startingPoint = new DirectoryEntry(LDAP_PATH);
+            DirectoryEntry startingPoint = new DirectoryEntry(_ldapOu);
             DirectorySearcher searcher = new DirectorySearcher(startingPoint);
             searcher.Filter = "(objectCategory=organizationalUnit)";
             foreach (SearchResult ou in searcher.FindAll())
