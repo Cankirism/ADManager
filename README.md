@@ -32,6 +32,10 @@ Bu uygulama ile ilk aşamada  planlanan  :
 - AD sunucusunda OU tanımlaması ve kullanıcı - OU ataması yapılması,
 - Kullanıcı - OU taşıma işlemleri,
 - AD sunucu sağlık analizi yapılması ve fazlasıdır. 
+## 28/09/2019 tarihli Güncelleme ##
+- Yapısal Birim bazlı (Organizational Unit) Kullanıcı Ekleme Özelliği Eklendi
+- Yapısal Birim bazlı Bilgisayar ekleme özelliği eklendi
+- Yapısal Birim isimlendirmeleri uygulama standartı gereği OU ile başlamalıdır. Örneğin muhasebe departmanı için OUMuhasebe gibi.
 
 ![logo](../master/ScreenShots/uyg_logo.png)  
 
@@ -68,12 +72,17 @@ Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) 
     <add key="path" value=""/>
     <add key="domainServer" value=""/>
     <add key="computerDomain" value=""/>
+    <add key="DCDomainServer" value=""/>
+    <add key="DCDomainEk" value=""/>
+    <add key="LDAPOU" value=""/>>
   </appSettings>
 ```  
 **path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local  
 **domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local (domainfqdn)   
-**computerDomain** : Domainizin adı. Örn : mydomain.local  
-
+**computerDomain** : Domainizin adı. Örn : mydomain.local
+**DcDomainServer** : Domain adınızı alan adından önceki kısmıdır. Domain adınız mydomain.local ilse DCDomainServer "mydomain" olacaktır.
+**DCDomainEk** : Domain adınızın alan uzantısıdır. Örneğin .local,.com gibi.
+**LDAPOU** : AD Veritabanında Yapısal Birim alanlarını çekerken kullanılan parametredir. Şu şekilde olmalıdır. Örn: LDAP://DC=mydomain,dc=local
 Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 
 ## Uygulama Arayüzü Kullanım ##
