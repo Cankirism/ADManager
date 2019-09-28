@@ -13,11 +13,16 @@ namespace ADManager
         private readonly string _userName;
         private readonly string _userPassword;
         private readonly string _domain;
+        private readonly string _ldap;
+        private readonly string _dcServer;
+        private readonly string _dcEk;
         public User()
         {
             this._userName = Giris.UserName;
             this._userPassword = Giris.UserPassword;
             _domain = System.Configuration.ConfigurationManager.AppSettings["domainServer"];
+            _dcServer = System.Configuration.ConfigurationManager.AppSettings["DCDomainServer"];
+            _dcEk = System.Configuration.ConfigurationManager.AppSettings["DCDomainEk"];
         }
 
         #region Methodlar
@@ -26,6 +31,16 @@ namespace ADManager
         {
             PrincipalContext _principialContext = new PrincipalContext(ContextType.Domain,_domain, _userName, _userPassword);
             return _principialContext;
+        }
+
+        public PrincipalContext BaglantiKur(string YapisalBirim)
+        {
+            if (string.IsNullOrEmpty(YapisalBirim)) { return BaglantiKur(); }
+            else
+            {
+                PrincipalContext _principialContext = new PrincipalContext(ContextType.Domain,_domain,$"OU={YapisalBirim},DC={_dcServer},DC={_dcEk}",_userName, _userPassword);
+                return _principialContext;
+            }
         }
         public UserPrincipal SetUserPrincipial(PrincipalContext con)
         {

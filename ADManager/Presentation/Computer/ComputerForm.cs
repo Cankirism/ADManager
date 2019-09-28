@@ -30,6 +30,7 @@ namespace ADManager
             SetDataGridSettings();
             System.Windows.Forms.ToolTip tooltip = new ToolTip();
             tooltip.SetToolTip(this.SearchTxt, "Cihaz İp ya da Cihaz  adını giriniz");
+            GetyapisalBirim();
         }
         private void SetDataGridSettings()
         {
@@ -42,6 +43,17 @@ namespace ADManager
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+        }
+
+        //Ou listesini Ad Veritabanından alır
+        private void GetyapisalBirim()
+        {
+            OUClass ouSinif = new OUClass();
+            foreach (var yp in ouSinif.GetAllOU())
+            {
+                comboBox1.Items.Add(yp);
+            }
 
         }
         private void HepsiniGetirBtn_Click(object sender, EventArgs e)
@@ -245,6 +257,23 @@ namespace ADManager
         private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void KaydetBtn_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(NameTxt.Text))
+            {
+                MessageBox.Show("Cihaz adı boş olamaz", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+               MessageBox.Show( _computerBl.SaveComputer(NameTxt.Text, (comboBox1.SelectedIndex >= 0) ? comboBox1.SelectedItem.ToString() : null));
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void GetComputerInfo(object sender, EventArgs e)

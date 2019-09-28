@@ -73,6 +73,8 @@
             this.ExcelBtn = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bgWorker = new System.ComponentModel.BackgroundWorker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,6 +99,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1283, 80);
             this.panel1.TabIndex = 0;
+//            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
             // button2
@@ -373,6 +376,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.radioButtonPasif);
             this.groupBox1.Controls.Add(this.radioButtonAktif);
             this.groupBox1.Controls.Add(this.KaydetBtn);
@@ -396,7 +401,7 @@
             // 
             this.radioButtonPasif.AutoSize = true;
             this.radioButtonPasif.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonPasif.Location = new System.Drawing.Point(491, 117);
+            this.radioButtonPasif.Location = new System.Drawing.Point(553, 117);
             this.radioButtonPasif.Name = "radioButtonPasif";
             this.radioButtonPasif.Size = new System.Drawing.Size(52, 19);
             this.radioButtonPasif.TabIndex = 9;
@@ -408,7 +413,7 @@
             // 
             this.radioButtonAktif.AutoSize = true;
             this.radioButtonAktif.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.radioButtonAktif.Location = new System.Drawing.Point(438, 117);
+            this.radioButtonAktif.Location = new System.Drawing.Point(495, 118);
             this.radioButtonAktif.Name = "radioButtonAktif";
             this.radioButtonAktif.Size = new System.Drawing.Size(52, 19);
             this.radioButtonAktif.TabIndex = 8;
@@ -490,14 +495,14 @@
             // 
             // UserNameTxt
             // 
-            this.UserNameTxt.Location = new System.Drawing.Point(104, 81);
+            this.UserNameTxt.Location = new System.Drawing.Point(113, 79);
             this.UserNameTxt.Name = "UserNameTxt";
             this.UserNameTxt.Size = new System.Drawing.Size(219, 23);
             this.UserNameTxt.TabIndex = 3;
             // 
             // NameTxt
             // 
-            this.NameTxt.Location = new System.Drawing.Point(104, 35);
+            this.NameTxt.Location = new System.Drawing.Point(113, 35);
             this.NameTxt.Name = "NameTxt";
             this.NameTxt.Size = new System.Drawing.Size(219, 23);
             this.NameTxt.TabIndex = 2;
@@ -568,6 +573,24 @@
             // 
             this.bgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.bgWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(113, 117);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 23);
+            this.comboBox1.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(6, 122);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Yapısal Birim OU";
             // 
             // UserForm
             // 
@@ -644,5 +667,7 @@
         private System.Windows.Forms.Button button2;
         private System.ComponentModel.BackgroundWorker bgWorker;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

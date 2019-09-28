@@ -135,7 +135,7 @@ namespace ADManager
         {
             try
             {
-                using (PrincipalContext principialCon = user.BaglantiKur())
+                using (PrincipalContext principialCon = user.BaglantiKur(userFormInputs.YapisalBirim))
                 using (UserPrincipal userPrincipial = user.SetUserPrincipial(principialCon, userFormInputs.userName, userFormInputs.userPass))
                 {
                     userPrincipial.SamAccountName = userFormInputs.userName;
@@ -143,11 +143,18 @@ namespace ADManager
                     userPrincipial.Surname = userFormInputs.surname;
                     userPrincipial.DisplayName = string.Format("{0} {1}", userFormInputs.name, userFormInputs.surname);
                     userPrincipial.Enabled = true;
+                   
                     userPrincipial.Save();
                     userPrincipial.ExpirePasswordNow(); //Kullanıcı ilk oturum açılısında parolasını değiştirsin .
                     _stateForTest = true;
                     ResponseMessage = "Kullanıcı kaydı başarılı";
                 }
+            }
+            catch (DirectoryServicesCOMException ex)
+            {
+                _stateForTest = false;
+                ResponseMessage = ex.Message;
+
             }
             catch (Exception ex )
             {

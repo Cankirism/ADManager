@@ -13,9 +13,14 @@ namespace ADManager
     {
         private readonly string _domainServer;
         private ComputerPrincipal _computerPrincipial;
+        private readonly string _dcServer;
+        private readonly string _dcEk;
+      
         public Computer()
         {
-            _domainServer =   System.Configuration.ConfigurationManager.AppSettings["domainServer"]; 
+            _domainServer =   System.Configuration.ConfigurationManager.AppSettings["domainServer"];
+            _dcServer = System.Configuration.ConfigurationManager.AppSettings["DCDomainServer"];
+            _dcEk = System.Configuration.ConfigurationManager.AppSettings["DCDomainEk"];
         }
 
         #region CihazMethodlar
@@ -25,6 +30,17 @@ namespace ADManager
             PrincipalContext principialContext = new PrincipalContext(ContextType.Domain, _domainServer);
             return principialContext;
 
+        }
+
+        public PrincipalContext SetPrincipialContext(string computerName, string yapisalBirim)
+        {
+            if (string.IsNullOrEmpty(yapisalBirim))
+            { return SetPrincipialContext(); }
+            else
+            {
+                PrincipalContext principialContext = new PrincipalContext(ContextType.Domain, _domainServer, $"OU={yapisalBirim},DC={_dcServer},DC={_dcEk}");
+                return principialContext;
+            }
         }
 
         public ComputerPrincipal SetComputerPrincipial(PrincipalContext principialContext)

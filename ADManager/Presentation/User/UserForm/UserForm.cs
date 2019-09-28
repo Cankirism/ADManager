@@ -11,6 +11,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.DirectoryServices.AccountManagement;
 using System.Globalization;
+using System.DirectoryServices;
 
 namespace ADManager
 {
@@ -39,8 +40,20 @@ namespace ADManager
 
         private void CreateUser_Load(object sender, EventArgs e)
         {
+            GetOU();
             SetDataGridSettings();
             SetStartParameters();
+        }
+
+        // Domain sunucudan yapısal birim - OU listesini alır.
+        private void GetOU()
+        {
+            OUClass ou = new OUClass();
+            foreach (var yp in ou.GetAllOU())
+            {
+                comboBox1.Items.Add(yp);
+            }
+
         }
 
         // Datagrid satır-sütun ayarlarını set eder.
@@ -273,7 +286,7 @@ namespace ADManager
             ExceptionCatcher(() =>
             {
                 string userNameEnglishChar = EnglishChar.ConvertTRCharToENChar(UserNameTxt.Text);
-                var userFormInputs = new UserFormInputs(NameTxt.Text, SurnameTxt.Text,userNameEnglishChar, PasswordTxt.Text, true);
+                var userFormInputs = new UserFormInputs(NameTxt.Text, SurnameTxt.Text,userNameEnglishChar, PasswordTxt.Text, true,(comboBox1.SelectedIndex>=0)?comboBox1.SelectedItem.ToString():null);
                 _blUser.CreateUserAccount(userFormInputs);
                 MessageBox.Show($"{_blUser.ResponseMessage}", "Durum", MessageBoxButtons.OK, MessageBoxIcon.Information);
             });
@@ -334,6 +347,10 @@ namespace ADManager
                 ShowMessage(ex.Message);
             }
 
+            catch (DirectoryServicesCOMException comExc)
+            {
+                ShowMessage(comExc.Message);
+            }
             catch (Exception ex)
             {
                 ShowMessage(ex.Message);
@@ -412,6 +429,8 @@ namespace ADManager
             MouseX = e.X;
             MouseY = e.Y;
         }
+
+        
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {

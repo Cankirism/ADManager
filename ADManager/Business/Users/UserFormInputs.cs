@@ -14,14 +14,16 @@ namespace ADManager
         public string name { get; set; }
         public string surname { get; set; }
         public bool isUserEnable { get; set; }
+        public string YapisalBirim { get; set; }
 
-        public UserFormInputs(string name, string surname, string userName, string userPass, bool isUserEnable)
+        public UserFormInputs(string name, string surname, string userName, string userPass, bool isUserEnable,string YapisalBirim)
         {
             this.userName = userName;
             this.userPass = userPass;
             this.name = name;
             this.surname = surname;
             this.isUserEnable = isUserEnable;
+            this.YapisalBirim = YapisalBirim;
 
         }
     }

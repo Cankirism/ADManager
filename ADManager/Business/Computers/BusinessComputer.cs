@@ -124,6 +124,30 @@ namespace ADManager
 
         #endregion
 
+        #region BilgisayarKayit
+
+        // Bilgisayar Kayit Methodu
+
+        public string SaveComputer(string computerName,string yapisalBirim)
+        {
+            try
+            {
+                using (PrincipalContext principialContext = _computer.SetPrincipialContext(computerName, yapisalBirim))
+                using (ComputerPrincipal computerPrincipial = _computer.SetComputerPrincipial(principialContext))
+                {
+                    computerPrincipial.SamAccountName = computerName;
+                    computerPrincipial.Enabled = true;
+                    computerPrincipial.Save();
+                    return "Başarı ile Kayıt Yapıldı";
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        #endregion
+
         #region IpAdresCozumle
         public string GetComputerIpAddress(string computerName)
         {
