@@ -79,9 +79,9 @@ Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) 
 ```  
 **path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local  
 **domainServer** : Domain sunucusunu adı. Örn: mydomainservername.mydomain.local (domainfqdn)   
-**computerDomain** : Domainizin adı. Örn : mydomain.local
-**DcDomainServer** : Domain adınızı alan adından önceki kısmıdır. Domain adınız mydomain.local ilse DCDomainServer "mydomain" olacaktır.
-**DCDomainEk** : Domain adınızın alan uzantısıdır. Örneğin .local,.com gibi.
+**computerDomain** : Domainizin adı. Örn : mydomain.local    
+**DcDomainServer** : Domain adınızı alan adından önceki kısmıdır. Domain adınız mydomain.local ilse DCDomainServer "mydomain" olacaktır.  
+**DCDomainEk** : Domain adınızın alan uzantısıdır. Örneğin .local,.com gibi.  
 **LDAPOU** : AD Veritabanında Yapısal Birim alanlarını çekerken kullanılan parametredir. Şu şekilde olmalıdır. Örn: LDAP://DC=mydomain,dc=local
 Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 
