@@ -10,7 +10,7 @@ namespace ADManager
     class OUClass
     {
 
-        private  string _ldapOu= System.Configuration.ConfigurationManager.AppSettings["LDAPOU"];
+        private  readonly string _ldapOu= System.Configuration.ConfigurationManager.AppSettings["LDAPOU"];
         public List<string> GetAllOU()
         {
             List<string> ouList = new List<string>();

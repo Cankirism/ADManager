@@ -13,7 +13,6 @@ namespace ADManager
         private readonly string _userName;
         private readonly string _userPassword;
         private readonly string _domain;
-        private readonly string _ldap;
         private readonly string _dcServer;
         private readonly string _dcEk;
         public User()

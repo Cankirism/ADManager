@@ -14,7 +14,7 @@ namespace ADManager
 {
    public class BusinessUser
     {
-        private static bool _stateForTest { get; set; }
+        private static bool _stateForTest;
         private readonly User user;
         private readonly Dictionary<int, string> _durumKodlari;
         public static bool testState

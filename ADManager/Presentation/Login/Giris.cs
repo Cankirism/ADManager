@@ -16,15 +16,7 @@ namespace ADManager
     public partial class Giris : Form
     {
        private  int TogMove, Mvalx, Mvaly; // UI formunun hareket parametreleri.
-       protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
-                return handleParam;
-            }
-        }
+     
         public static string  UserName { get; set; }
         public static string UserPassword { get; set; }
         public Giris()
@@ -100,6 +92,7 @@ namespace ADManager
                 action.Invoke();
             }
 
+           
             catch (DirectoryServicesCOMException ex)
             {
                 ShowErrorMessage(ex.Message);
