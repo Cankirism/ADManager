@@ -83,7 +83,7 @@ namespace ADManager
             // 
             // timer1
             // 
-            this.timer1.Interval = 30;
+            this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Intro
@@ -98,7 +98,6 @@ namespace ADManager
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Intro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-       //     this.Load += new System.EventHandler(this.Intro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

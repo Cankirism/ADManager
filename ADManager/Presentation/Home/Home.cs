@@ -44,6 +44,7 @@ namespace ADManager
             ToolTip1.SetToolTip(this.GithubBtn, "uygulama Github hesabı");
             ToolTip1.SetToolTip(this.Contactbtn, "İletişim");
             toolTip1.SetToolTip(this.ExitBtn, "Çıkış");
+            toolTip1.SetToolTip(this.AbuseBtn, "İp Blacklist Kontrolü");
             UserNameLbl.Text = _logonName;
         }
 
@@ -181,6 +182,9 @@ namespace ADManager
                 case "OUBtn":
                     formName = "ou";
                     break;
+                case "AbuseBtn":
+                    formName = "BlacklistKontrol";
+                    break;
             }
 
             CheckOpenForm(formName, isOpen);
@@ -219,6 +223,9 @@ namespace ADManager
 
                     case "Contact":
                         ShowForm<Contact>();
+                        break;
+                    case "BlacklistKontrol":
+                        ShowForm<BlacklistKontrol>();
                         break;
                   
                 }
@@ -288,6 +295,11 @@ namespace ADManager
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            OpenForm(sender);
+        }
+
+        private void AbuseBtn_Click(object sender, EventArgs e)
         {
             OpenForm(sender);
         }
