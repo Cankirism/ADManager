@@ -36,6 +36,9 @@ Bu uygulama ile ilk aşamada  planlanan  :
 - Yapısal Birim bazlı (Organizational Unit) Kullanıcı Ekleme Özelliği Eklendi
 - Yapısal Birim bazlı Bilgisayar ekleme özelliği eklendi
 - Yapısal Birim isimlendirmeleri uygulama standartı gereği OU ile başlamalıdır. Örneğin muhasebe departmanı için OUMuhasebe gibi.
+## 04/11/2019 tarihli Güncelleme ##
+- AbuseIpDB servisleri ile entegrasyon yapıldı. Ip bazlı karaliste sorgulama özelliği eklendi.
+- Servis MaxAgeInDays parametresi 1 gün ile 365 gün aralığında olmalıdır.
 
 ![logo](../master/ScreenShots/uyg_logo.png)  
 
@@ -74,7 +77,8 @@ Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) 
     <add key="computerDomain" value=""/>
     <add key="DCDomainServer" value=""/>
     <add key="DCDomainEk" value=""/>
-    <add key="LDAPOU" value=""/>>
+    <add key="LDAPOU" value=""/>
+    <add key="ApiKey" value=""/>
   </appSettings>
 ```  
 **path** :  Domain Sunucu Ldap bağlantı yolu . Örn: LDAP://mydomainservername.mydomain.local  
@@ -82,7 +86,9 @@ Bazı parametreleri (Ldap bağlantı adresi, domain sunucu adı ve domain adı) 
 **computerDomain** : Domainizin adı. Örn : mydomain.local    
 **DcDomainServer** : Domain adınızı alan adından önceki kısmıdır. Domain adınız mydomain.local ilse DCDomainServer "mydomain" olacaktır.  
 **DCDomainEk** : Domain adınızın alan uzantısıdır. Örneğin .local,.com gibi.  
-**LDAPOU** : AD Veritabanında Yapısal Birim alanlarını çekerken kullanılan parametredir. Şu şekilde olmalıdır. Örn: LDAP://DC=mydomain,dc=local
+**LDAPOU** : AD Veritabanında Yapısal Birim alanlarını çekerken kullanılan parametredir. Şu şekilde olmalıdır. Örn: LDAP://DC=mydomain,dc=local  
+**ApiKey** : AbuseIpDB ApiKey'i.  
+
 Bu ayarları yaptıktan sonra uygulama kullanıma hazır hale gelecektir.
 
 ## Uygulama Arayüzü Kullanım ##
